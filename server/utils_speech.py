@@ -7,7 +7,7 @@ import threading  # For handling threads
 import queue  # For creating and managing queues
 from opentelemetry import context as context_api
 from server import utils_logger
-console_logger, console_tracer = utils_logger.get_logger_tracer(__name__)
+console_logger, console_tracer = utils_logger.get_logger_tracer()
 
 # Initialize Speech SDK configuration  
 speech_config = speechsdk.SpeechConfig(  

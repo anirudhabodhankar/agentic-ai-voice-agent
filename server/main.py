@@ -14,7 +14,7 @@ load_dotenv()
 
 from opentelemetry import context as context_api
 from server import utils_logger
-console_logger, console_tracer = utils_logger.get_logger_tracer(__name__)
+console_logger, console_tracer = utils_logger.get_logger_tracer()
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import StreamingResponse

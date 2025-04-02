@@ -10,7 +10,7 @@ from azure.cosmos import CosmosClient, PartitionKey
 import json
 from time import sleep
 from server import utils_logger
-console_logger, console_tracer = utils_logger.get_logger_tracer(__name__)
+console_logger, console_tracer = utils_logger.get_logger_tracer()
 
 import dotenv
 from pathlib import Path 

@@ -9,7 +9,7 @@ from server import utils_db
 from server import utils_voice_llm  
 from server import utils_logger
 from server import utils_speech
-console_logger, console_tracer = utils_logger.get_logger_tracer(__name__)
+console_logger, console_tracer = utils_logger.get_logger_tracer()
 
 from opentelemetry.instrumentation.langchain import LangchainInstrumentor
 LangchainInstrumentor().instrument()   

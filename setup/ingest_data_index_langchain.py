@@ -5,7 +5,7 @@ from pathlib import Path
 dotenv.load_dotenv(dotenv_path=Path(__file__).parent.parent / 'server' / '.env' )
 
 from server import utils_logger
-console_logger, console_tracer = utils_logger.get_logger_tracer(__name__)
+console_logger, console_tracer = utils_logger.get_logger_tracer()
 
 from langchain_community.document_loaders import TextLoader
 from langchain_openai import AzureOpenAIEmbeddings

@@ -11,7 +11,7 @@ from azure.cosmos import CosmosClient , ContainerProxy, exceptions , DatabasePro
 import redis  
   
 from server import utils_logger
-console_logger, console_tracer = utils_logger.get_logger_tracer(__name__)
+console_logger, console_tracer = utils_logger.get_logger_tracer()
 max_history = int(os.getenv("MAX_MESSAGE_HISTORY", "-6"))
 
 @console_tracer.start_as_current_span("get_redis_client")

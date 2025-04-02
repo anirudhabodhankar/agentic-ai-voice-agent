@@ -9,7 +9,7 @@ from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
 
 from server import utils_db  
 from server import utils_logger
-console_logger, console_tracer = utils_logger.get_logger_tracer(__name__)
+console_logger, console_tracer = utils_logger.get_logger_tracer()
 
 azure_openai_api_version: str = "2024-05-01-preview"
 azure_embedding_deployment: str = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "NA")

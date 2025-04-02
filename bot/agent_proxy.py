@@ -20,7 +20,7 @@ audio_input_format: str = os.getenv("AUDIO_INPUT_FORMAT", "wav")
 audio_input_format = "wav" if is_single_app else audio_input_format
 server_url = f'{server_url}_{audio_input_format}'
 
-console_logger, console_tracer = utils_logger.get_logger_tracer(__name__)
+console_logger, console_tracer = utils_logger.get_logger_tracer()
 
 if is_single_app:
     from server import main
