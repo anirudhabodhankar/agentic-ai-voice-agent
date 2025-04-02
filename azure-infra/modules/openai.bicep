@@ -82,15 +82,6 @@ resource accounts_text_embedding_ada_002 'Microsoft.CognitiveServices/accounts/d
   }
 }
 
-// // Get API key
-// resource openAIKey 'Microsoft.CognitiveServices/accounts/listKeys@2023-05-01' existing = {
-//   parent: openAI
-//   name: 'current'
-// }
-
-output endpoint string = openAI.properties.endpoint
-// output key string = openAIKey.listKeys().key1
 output info object = {
   endpoint: openAI.properties.endpoint
-  // key: openAIKey.listKeys().key1
 }

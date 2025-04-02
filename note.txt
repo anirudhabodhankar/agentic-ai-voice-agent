@@ -9,7 +9,7 @@ ffmpeg -i file10.amr -ar 24000 file10_converted.wav
 az resource update --resource-group "vendorpa" --name "vpa-test-cosmosdb" --resource-type "Microsoft.DocumentDB/databaseAccounts" --set properties.disableLocalAuth=false
 az resource update --resource-group "vendorpa" --name "vpa-test-cosmosdb" --resource-type "Microsoft.DocumentDB/databaseAccounts" --set properties.publicNetworkAccess="Enabled"
 
-curl https://vpaconapp.wonderfulfield-17f64436.southindia.azurecontainerapps.io/
+curl https://vpa-test-app.happyriver-e1449d38.southindia.azurecontainerapps.io
 curl http://localhost:8000/
 
 https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/security/how-to-disable-key-based-authentication?tabs=python&pivots=azure-interface-cli

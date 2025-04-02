@@ -105,9 +105,6 @@ resource container_app 'Microsoft.App/containerapps@2024-10-02-preview' = {
   }
 }
 
-output containerAppId string = container_app.id
-output containerAppName string = container_app.name
-
 output info object = {
   appid: container_app.id
   appName: container_app.name

@@ -79,15 +79,6 @@ resource databaseAccounts_cosmosdb 'Microsoft.DocumentDB/databaseAccounts/sqlDat
   }
 }
 
-// // Get the primary key
-// resource cosmosDbKey 'Microsoft.DocumentDB/databaseAccounts/listKeys@2023-04-15' existing = {
-//   parent: cosmosDb
-//   name: 'default'
-// }
-
-output endpoint string = cosmosDb.properties.documentEndpoint
-// output key string = cosmosDbKey.listKeys().primaryMasterKey
 output info object = {
   endpoint: cosmosDb.properties.documentEndpoint
-  // key: cosmosDbKey.listKeys().primaryMasterKey
 }

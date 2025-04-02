@@ -12,14 +12,14 @@
     "region_openai": {
       "type": "string",
       "metadata": {
-        "description": "The Azure region where resources will be deployed."
+        "description": "The Azure region where openai resources will be deployed."
       }
     }
     ,
     "region_speech": {
       "type": "string",
       "metadata": {
-        "description": "The Azure region where resources will be deployed."
+        "description": "The Azure region where speech resources will be deployed."
       }
     }
     ,

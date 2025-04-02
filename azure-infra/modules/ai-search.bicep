@@ -28,15 +28,6 @@ resource aiSearch 'Microsoft.Search/searchServices@2024-06-01-preview' = {
   }
 }
 
-// // Get the admin key
-// resource searchServiceKey 'Microsoft.Search/searchServices/listAdminKeys@2023-11-01' existing = {
-//   parent: aiSearch
-//   name: 'current'
-// }
-
-output endpoint string = 'https://${aiSearch.name}.search.windows.net'
-// output key string = searchServiceKey.listKeys().primaryKey
 output info object = {
   endpoint: 'https://${aiSearch.name}.search.windows.net'
-  // key: searchServiceKey.listKeys().primaryKey
 }

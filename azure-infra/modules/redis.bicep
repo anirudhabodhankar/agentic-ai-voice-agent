@@ -25,17 +25,7 @@ resource redisCache 'Microsoft.Cache/Redis@2024-11-01' = {
   }
 }
 
-// // Get the primary key
-// resource redisKey 'Microsoft.Cache/Redis/listKeys@2023-04-01' existing = {
-//   parent: redisCache
-//   name: 'default'
-// }
-
-output host string = '${redisCache.name}.redis.cache.windows.net'
-output port string = '6380'
-// output key string = redisKey.listKeys().primaryKey
 output info object = {
   host: '${redisCache.name}.redis.cache.windows.net'
   port: '6380'
-  // key: redisKey.listKeys().primaryKey
 }
