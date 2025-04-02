@@ -31,7 +31,8 @@ async def start_conversation(device_id: str):
   
         try:  
             console_logger.debug("Initiating get_conversation_response_streaming...")  
-            response = await agent_proxy.generate_audio_response(  
+            proxy = agent_proxy.AgentProxy()
+            response = await proxy.generate_audio_response(  
                 device_id=device_id,  
                 user_input=user_input,  
                 user_audio_file=None  

@@ -1,11 +1,8 @@
-# credits : https://github.com/dynamiccreator/whisper-typer-tool/blob/main/whisper-typer-tool.py
-# python -m bot.agent_audio
+# python -m bot.agent_audio_socket
 
 from pynput import keyboard
-import time
 import threading
 import pyaudio
-import wave
 from playsound import playsound
 from bot import agent_proxy
 
@@ -17,8 +14,6 @@ stop_recording=False
 is_recording=False
 stop_playback = False
 pykeyboard= keyboard.Controller()
-temp_prefix = "temp\\test"
-
 
 #keyboard events
 pressed = set()
@@ -57,8 +52,8 @@ def record_speech():
 
     frames = []  # Initialize array to store frames
 
-    print("Start recording...\n")
     playsound("audio\\on.wav")
+    print("Start recording...\n")
 
     while stop_recording==False:
         data = stream.read(chunk)

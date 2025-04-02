@@ -1,4 +1,3 @@
-# credits : https://github.com/dynamiccreator/whisper-typer-tool/blob/main/whisper-typer-tool.py
 # python -m bot.agent_audio
 
 from pynput import keyboard
@@ -20,7 +19,7 @@ stop_playback = False
 pykeyboard= keyboard.Controller()
 temp_prefix = "temp\\test"
 
-def playback_speech():
+def get_server_response():
     global file_ready_counter
     global stop_playback
     i=1
@@ -98,7 +97,7 @@ def record_speech():
     file_ready_counter=file_ready_counter+1
 
 #transcribe speech in infinte loop
-t2 = threading.Thread(target=playback_speech)
+t2 = threading.Thread(target=get_server_response)
 t2.start()
 
 #hot key events

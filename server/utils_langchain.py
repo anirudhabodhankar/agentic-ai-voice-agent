@@ -1,60 +1,26 @@
-import json
 import os
 from datetime import datetime
-from typing import List
 
 from langchain.agents import AgentExecutor, create_tool_calling_agent
-from langchain_chroma import Chroma
 from langchain_community.vectorstores.azuresearch import AzureSearch
-from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.tools import tool
-from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings, AzureOpenAI
+from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
 
 from server import utils_db  
 from server import utils_logger
 console_logger, console_tracer = utils_logger.get_logger_tracer(__name__)
 
 azure_openai_api_version: str = "2024-05-01-preview"
-azure_embedding_deployment: str = "text-embedding-ada-002"
+azure_embedding_deployment: str = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "NA")
 
 doc_index : str = os.getenv("AZURE_AI_SEARCH_INDEX_DOC", "NA")
 tool_index : str = os.getenv("AZURE_AI_SEARCH_INDEX_TOOL", "NA")
 
 embedding_function = AzureOpenAIEmbeddings(
-        azure_deployment= "text-embedding-ada-002",
+        azure_deployment= azure_embedding_deployment,
         openai_api_version= azure_openai_api_version 
     )
-
-vector_store_doc = AzureSearch(
-            azure_search_endpoint=os.getenv("AZURE_AI_SEARCH_ENDPOINT", "NA"),
-            azure_search_key=os.getenv("AZURE_AI_SEARCH_KEY", "NA"),
-            index_name=doc_index,
-            embedding_function=embedding_function,
-        )
-# doc_vectorstore = Chroma(persist_directory="server/chroma_db", embedding_function=embedding_function)
-# doc_retriever = doc_vectorstore.as_retriever(search_kwargs={"k": 2})
-
-vector_store_tool = AzureSearch(
-            azure_search_endpoint=os.getenv("AZURE_AI_SEARCH_ENDPOINT", "NA"),
-            azure_search_key=os.getenv("AZURE_AI_SEARCH_KEY", "NA"),
-            index_name=tool_index,
-            embedding_function=embedding_function,
-    )
-# tools_vectorstore = Chroma(persist_directory="server/chroma_db_tools", embedding_function=embedding_function)
-# tools_retriever = tools_vectorstore.as_retriever(search_kwargs={"k": 3})
-
-
-# llm_gpt_4o = AzureChatOpenAI(
-#         azure_endpoint=os.getenv("PTU_AZURE_OPENAI_ENDPOINT", ""),
-#         api_key= os.getenv("PTU_AZURE_OPENAI_API_KEY", ""),
-#         azure_deployment = "gpt-4o",
-#         api_version = azure_openai_api_version,
-#         temperature=0,
-#         max_tokens=200,
-#         timeout=None,
-#         max_retries=2,
-#     )
 
 llm_gpt_4o = AzureChatOpenAI(
         azure_deployment = "gpt-4o",
@@ -65,14 +31,19 @@ llm_gpt_4o = AzureChatOpenAI(
         max_retries=2,
     )
 
-# llm_gpt_4o_mini = AzureChatOpenAI(
-#         azure_deployment = "gpt-4o-mini",
-#         api_version = azure_openai_api_version,
-#         temperature=0,
-#         max_tokens=200,
-#         timeout=None,
-#         max_retries=2,
-#     )
+vector_store_doc = AzureSearch(
+            azure_search_endpoint=os.getenv("AZURE_AI_SEARCH_ENDPOINT", "NA"),
+            azure_search_key=os.getenv("AZURE_AI_SEARCH_KEY", "NA"),
+            index_name=doc_index,
+            embedding_function=embedding_function,
+        )
+
+vector_store_tool = AzureSearch(
+            azure_search_endpoint=os.getenv("AZURE_AI_SEARCH_ENDPOINT", "NA"),
+            azure_search_key=os.getenv("AZURE_AI_SEARCH_KEY", "NA"),
+            index_name=tool_index,
+            embedding_function=embedding_function,
+    )
 
 agent_system_prompt_instructions = """
     You are a helpful AI audio device assistant named SoundPod. generate feminine response. 
@@ -109,14 +80,6 @@ agent_prompt = ChatPromptTemplate.from_messages([
     ("human", "{input}"),
     MessagesPlaceholder(variable_name="agent_scratchpad"),
 ])
-
-ticket_summarizer_prompt = ChatPromptTemplate.from_messages([
-    ("system", """You will be provided with the chat history of the session. 
-        The user wants to raise a ticket based on the conversation. 
-        Generate a title and description for the ticket in JSON format, with "title" and "description" as keys and their respective values as strings.
-        The title should be a concise summary of the issue, and the description should detailed summary ov conversation."""),                                                             
-    MessagesPlaceholder("chat_history")])
-
 
 @tool
 def get_device_info(device_id: str) -> str:
@@ -302,7 +265,6 @@ tool_map = {
 
 @console_tracer.start_as_current_span("get_agent_executor")
 def get_agent_executor(query: str):
-    # filtered_tools = tools_retriever.invoke(query)
     filtered_tools = vector_store_tool.similarity_search(query = query, k = 3)
     print(f"filtered_tools: {filtered_tools}")
     
@@ -311,8 +273,6 @@ def get_agent_executor(query: str):
         console_logger.info(f'filtered_tool: {filtered_tool.metadata["tool"]}')
         tools.append(tool_map[filtered_tool.metadata["tool"]])
 
-    # tools = [get_device_info, get_transactions_info, get_notification_info, get_troubleshooting_guide, raise_ticket, update_device_notifications, update_device_language, get_khatabook, update_khatabook]
     agent = create_tool_calling_agent(llm_gpt_4o, tools, agent_prompt)
-    # agent = create_tool_calling_agent(llm_gpt_4o_mini, tools, agent_prompt)
     agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
     return agent_executor

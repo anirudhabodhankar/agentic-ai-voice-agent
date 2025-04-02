@@ -2,28 +2,17 @@ import dotenv
 from pathlib import Path 
 dotenv.load_dotenv(dotenv_path=Path(__file__).parent.parent / 'server' / '.env' )
 
-import base64  
 from typing import Tuple, Any, Optional, AsyncGenerator
   
-from openai import AzureOpenAI  
 from server import utils_langchain
 from server import utils_db  
-from server import utils_reformulate_query  
 from server import utils_voice_llm  
 from server import utils_logger
 from server import utils_speech
 console_logger, console_tracer = utils_logger.get_logger_tracer(__name__)
 
 from opentelemetry.instrumentation.langchain import LangchainInstrumentor
-LangchainInstrumentor().instrument()
-  
-# Configuration Constants  
-AZURE_OPENAI_API_VERSION: str = "2024-05-01-preview"  
-DEPLOYMENT: str = "gpt-4o-mini"  
-  
-# Initialize Azure OpenAI Client  
-llm_client: AzureOpenAI = AzureOpenAI(api_version=AZURE_OPENAI_API_VERSION)  
-  
+LangchainInstrumentor().instrument()   
 
 @console_tracer.start_as_current_span("fetch_device_session_details")
 def fetch_device_session_details(device_id: str, user_input: str) -> Tuple[str, Any, Any]:  
@@ -38,14 +27,13 @@ def fetch_device_session_details(device_id: str, user_input: str) -> Tuple[str, 
         Tuple[str, Any, Any]: A tuple containing session ID, conversation object, and chat history.  
     """  
     console_logger.debug(f'Getting conversation for device_id: {device_id}')  
-    session_id: str = utils_db.get_session_id(device_id)  
-    console_logger.debug(f'Getting conversation for session_id: {session_id}')  
-      
+    session_id: str = utils_db.get_session_id(device_id)        
     conversation: Any = utils_db.get_conversation_or_create_new(  
         session_id=session_id,  
         device_id=device_id,  
         title=user_input  
     )  
+
     console_logger.debug(f'Getting langchain conversation for conversation: {session_id}')  
       
     chat_history: Any = utils_db.get_langchain_chat_from_conversation(conversation)  
@@ -54,60 +42,6 @@ def fetch_device_session_details(device_id: str, user_input: str) -> Tuple[str, 
     return session_id, conversation, chat_history  
 
 
-  
-def contextualize_text_query(device_id: str, device_language: str, chat_history: Any, user_input: str) -> Tuple[str, str]:  
-    """  
-    Reformulates the user's text query based on device context and chat history.  
-  
-    Args:  
-        device_id (str): The unique identifier for the device.  
-        chat_history (Any): The conversation history.  
-        user_input (str): The user's input or query.  
-  
-    Returns:  
-        str: The reformulated query.  
-    """  
-    requery: str = ""  
-    try:  
-        requery = utils_reformulate_query.get_text_completion(  
-            device_id=device_id,  
-            device_language=device_language,  
-            user_query=user_input,  
-            chat_history=chat_history  
-        )  
-    except Exception as e:  
-        console_logger.error(f"Error contextualizing audio query: {e}")  
-
-    return user_input, requery 
-            
-  
-def contextualize_audio_query(device_id: str, device_language: str, chat_history: Any, user_audio_input: str) -> Tuple[str, str]: 
-    """  
-    Reformulates the user's audio query based on device context and chat history.  
-  
-    Args:  
-        device_id (str): The unique identifier for the device.  
-        chat_history (Any): The conversation history.  
-        user_audio_input (str): b64encoded utf 8 sring  - base64.b64encode(wav_reader.read()).decode('utf-8')
-  
-    Returns:  
-        str: The reformulated query.  
-    """  
-    transcript: str = ""
-    requery: str = ""  
-    try:  
-        transcript, requery = utils_reformulate_query.get_audio_completion(  
-            device_id=device_id,  
-            device_language=device_language,  
-            encoded_string=user_audio_input,  
-            chat_history=chat_history  
-        )  
-
-    except Exception as e:  
-        console_logger.error(f"Error contextualizing audio query: {e}")  
-      
-    return transcript, requery  
-  
 async def get_conversation_response_streaming(  
     device_id: str,  
     user_input: Optional[str] = None,  
@@ -133,16 +67,12 @@ async def get_conversation_response_streaming(
 
         device_info = utils_db.get_device_info(device_id)
         
-        console_logger.info(f'contextualize_text_query called with device_id: {device_id}')
         requery: str = ""  
         if user_input:  
-            # transcript, requery = contextualize_text_query(device_id, device_info["language"], chat_history, user_input)  
             requery = user_input
         elif user_audio_input:  
             transcript = utils_speech.speech_to_text_from_base64(user_audio_input)
             requery = transcript
-            # transcript, requery = contextualize_text_query(device_id, device_info["language"], chat_history, transcript)  
-            # transcript, requery = contextualize_audio_query(device_id, device_info["language"], chat_history, user_audio_input)  
     
         console_logger.info(f'Executing the query: {requery}')  
     
@@ -173,7 +103,6 @@ async def get_conversation_response_streaming(
         console_logger.debug(f'Agent args: {agent_args}')
         try:  
             async for audio_chunk in audio_generator.generate_audio_chunks(  
-                llm_client,  
                 agent_executor,  
                 agent_args
             ):  
