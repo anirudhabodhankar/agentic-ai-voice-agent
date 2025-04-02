@@ -1,0 +1,26 @@
+[{
+        "id": "1",
+        "planId": "11",
+        "description": "This is a static Rs 1 monthly plan",
+        "planType": "Static monthly",
+        "amount": 1
+    }, {
+        "id": "2",
+        "planId": "12",
+        "description": "This is a static Rs 99 monthly plan",
+        "planType": "Static monthly",
+        "amount": 99
+    }, {
+        "id": "3",
+        "planId": "13",
+        "description": "This is a dynamic Rs 99 monthly plan which has conditional offer attached to it. Your monthly rental will be ₹49 for up to 100 payments, ₹39 for up to 200 payments, ₹29 for up to 300 payments, and just Rs 19 if you exceed 300 payments.",
+        "planType": "Conditional monthly",
+        "amount": 99
+    }, {
+        "id": "4",
+        "planId": "99",
+        "description": "This is a lifetime plan of Rs 1999. Merchant pays Rs 1999 upfront and no further deductions happen",
+        "planType": "Lifetime",
+        "amount": 2199
+    }
+]

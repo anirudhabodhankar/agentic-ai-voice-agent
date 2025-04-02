@@ -1,0 +1,33 @@
+https://www.xconvert.com/downloads
+ffmpeg - ffmpeg -y -f wav -i ./off.wav -ar 8000 -ac 1 -f amr ./off.amr -acodec libopencore_amrnb
+ffmpeg - ffmpeg -i test100002..amr -ar 22050  audio1.mp3
+-------------------------------------------------------
+fmpeg -i test10.wav -c:a libopencore_amrnb -ar 8000 -b:a 12.2k file10.amr
+ffmpeg -i file10.amr -ar 24000 file10_converted.wav
+---------------------------------------------------------
+
+az resource update --resource-group "vendorpa" --name "vpa-test-cosmosdb" --resource-type "Microsoft.DocumentDB/databaseAccounts" --set properties.disableLocalAuth=false
+az resource update --resource-group "vendorpa" --name "vpa-test-cosmosdb" --resource-type "Microsoft.DocumentDB/databaseAccounts" --set properties.publicNetworkAccess="Enabled"
+
+curl https://vpaconapp.wonderfulfield-17f64436.southindia.azurecontainerapps.io/
+curl http://localhost:8000/
+
+https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/security/how-to-disable-key-based-authentication?tabs=python&pivots=azure-interface-cli
+	
+
+cd "OneDrive - Microsoft\sandbox\agentic-ai-voice-agent"
+conda activate vendorpa
+python -m bot.agent_audio
+
+cd "OneDrive - Microsoft\sandbox\agentic-ai-voice-agent"
+conda activate vendorpa
+python -m bot.agent_audio_socket
+
+docker run -d --name vendorpa_container -p 8000:8000 vendorpa:latest
+docker ps
+
+uvicorn server.main:app --port 8000
+
+pip install -r client\requirements.txt
+pip install -r server\requiremens.txt
+

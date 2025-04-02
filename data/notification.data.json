@@ -1,0 +1,74 @@
+[
+    {
+        "deviceId": "864068071000005",
+        "id": "1",
+        "notification_id": "1",
+        "notificationTime": "0 8 * * *",
+        "notificationType": "settlement announcement",
+        "status": "enabled"
+    },
+    {
+        "deviceId": "864068071000005",
+        "notification_id": "2",
+        "id": "2",
+        "notificationTime": "0 9 * * *",
+        "notificationType": "settlement announcement",
+        "status": "enabled"
+    },
+    {
+        "deviceId": "864068071000005",
+        "id": "3",
+        "notification_id": "3",
+        "notificationTime": "0 21 * * *",
+        "notificationType": "payment summary announcement",
+        "status": "disabled"
+    },
+    {
+        "deviceId": "864068071000005",
+        "id": "4",
+        "notification_id": "4",
+        "notificationTime": "*/15 * * * *",
+        "notificationType": "custom greetings",
+        "status": "enabled"
+    },
+    {
+        "deviceId": "864068071000001",
+        "id": "5",
+        "notification_id": "5",
+        "notificationTime": null,
+        "notificationType": "last transaction",
+        "status": "enabled"
+    },
+    {
+        "deviceId": "864068071000001",
+        "id": "6",
+        "notification_id": "6",
+        "notificationTime": "0 10 * * *",
+        "notificationType": "settlement announcement",
+        "status": "disabled"
+    },
+    {
+        "deviceId": "864068071000001",
+        "id": "7",
+        "notification_id": "7",
+        "notificationTime": null,
+        "notificationType": "payment summary announcement",
+        "status": "disabled"
+    },
+    {
+        "deviceId": "864068071000003",
+        "id": "8",
+        "notification_id": "8",
+        "notificationTime": null,
+        "notificationType": "settlement announcement",
+        "status": "disabled"
+    },
+    {
+        "deviceId": "864068071000003",
+        "id": "9",
+        "notification_id": "9",
+        "notificationTime": null,
+        "notificationType": "last transaction",
+        "status": "enabled"
+    }
+]

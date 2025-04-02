@@ -1,0 +1,7 @@
+pynput
+pyaudio
+pydub
+playsound==1.2.2
+azure-cosmos
+python-dotenv
+

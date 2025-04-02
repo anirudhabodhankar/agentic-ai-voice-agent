@@ -1,0 +1,287 @@
+[
+    {
+        "id": "5",
+        "deviceId": "864068071000005",
+        "totalCollection": 14260,
+        "last10Transactions": [
+            {
+                "receivedFrom": "Sharma",
+                "amount": 130,
+                "transactionTime": "2025:03:05 16:13:41"
+            },
+            {
+                "receivedFrom": "Gupta",
+                "amount": 350,
+                "transactionTime": "2025:03:05 15:17:31"
+            },
+            {
+                "receivedFrom": "Gupta",
+                "amount": 230,
+                "transactionTime": "2025:03:05 14:43:13"
+            },
+            {
+                "receivedFrom": "Gupta",
+                "amount": 100,
+                "transactionTime": "2025:03:05 14:42:42"
+            },
+            {
+                "receivedFrom": "Sharma",
+                "amount": 100,
+                "transactionTime": "2025:03:05 14:40:09"
+            },
+            {
+                "receivedFrom": "Kapadiya",
+                "transactionTime": "2025:01:30 09:15:45",
+                "amount": 1000
+            },
+            {
+                "receivedFrom": "Joshi",
+                "transactionTime": "2025:01:30 09:14:10",
+                "amount": 450
+            },
+            {
+                "receivedFrom": "Kulkarni",
+                "transactionTime": "2025:01:30 09:12:22",
+                "amount": 300
+            },
+            {
+                "receivedFrom": "Banarjee",
+                "transactionTime": "2025:01:30 09:09:33",
+                "amount": 875
+            },
+            {
+                "receivedFrom": "Mutha",
+                "transactionTime": "2025:01:30 09:08:10",
+                "amount": 600
+            }
+        ]
+    },
+    {
+        "id": "1",
+        "deviceId": "864068071000001",
+        "totalCollection": 12500,
+        "last10Transactions": [
+            {
+                "receivedFrom": "Sharma",
+                "transactionTime": "2025:01:30 09:00:12",
+                "amount": 500
+            },
+            {
+                "receivedFrom": "Gupta",
+                "transactionTime": "2025:01:30 09:02:34",
+                "amount": 750
+            },
+            {
+                "receivedFrom": "Iyer",
+                "transactionTime": "2025:01:30 09:03:56",
+                "amount": 200
+            },
+            {
+                "receivedFrom": "Rathod",
+                "transactionTime": "2025:01:30 09:05:12",
+                "amount": 150
+            },
+            {
+                "receivedFrom": "Reddy",
+                "transactionTime": "2025:01:30 09:06:45",
+                "amount": 950
+            },
+            {
+                "receivedFrom": "Mutha",
+                "transactionTime": "2025:01:30 09:08:10",
+                "amount": 600
+            },
+            {
+                "receivedFrom": "Banarjee",
+                "transactionTime": "2025:01:30 09:09:33",
+                "amount": 875
+            },
+            {
+                "receivedFrom": "Kulkarni",
+                "transactionTime": "2025:01:30 09:12:22",
+                "amount": 300
+            },
+            {
+                "receivedFrom": "Joshi",
+                "transactionTime": "2025:01:30 09:14:10",
+                "amount": 450
+            },
+            {
+                "receivedFrom": "Kapadiya",
+                "transactionTime": "2025:01:30 09:15:45",
+                "amount": 1000
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "deviceId": "864068071000004",
+        "totalCollection": 12500,
+        "last10Transactions": [
+            {
+                "receivedFrom": "Sharma",
+                "transactionTime": "2025:01:30 09:00:12",
+                "amount": 500
+            },
+            {
+                "receivedFrom": "Gupta",
+                "transactionTime": "2025:01:30 09:02:34",
+                "amount": 750
+            },
+            {
+                "receivedFrom": "Iyer",
+                "transactionTime": "2025:01:30 09:03:56",
+                "amount": 200
+            },
+            {
+                "receivedFrom": "Rathod",
+                "transactionTime": "2025:01:30 09:05:12",
+                "amount": 150
+            },
+            {
+                "receivedFrom": "Reddy",
+                "transactionTime": "2025:01:30 09:06:45",
+                "amount": 950
+            },
+            {
+                "receivedFrom": "Mutha",
+                "transactionTime": "2025:01:30 09:08:10",
+                "amount": 600
+            },
+            {
+                "receivedFrom": "Banarjee",
+                "transactionTime": "2025:01:30 09:09:33",
+                "amount": 875
+            },
+            {
+                "receivedFrom": "Kulkarni",
+                "transactionTime": "2025:01:30 09:12:22",
+                "amount": 300
+            },
+            {
+                "receivedFrom": "Joshi",
+                "transactionTime": "2025:01:30 09:14:10",
+                "amount": 450
+            },
+            {
+                "receivedFrom": "Kapadiya",
+                "transactionTime": "2025:01:30 09:15:45",
+                "amount": 1000
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "deviceId": "864068071000002",
+        "totalCollection": 12500,
+        "last10Transactions": [
+            {
+                "receivedFrom": "Sharma",
+                "transactionTime": "2025:01:30 09:00:12",
+                "amount": 500
+            },
+            {
+                "receivedFrom": "Gupta",
+                "transactionTime": "2025:01:30 09:02:34",
+                "amount": 750
+            },
+            {
+                "receivedFrom": "Iyer",
+                "transactionTime": "2025:01:30 09:03:56",
+                "amount": 200
+            },
+            {
+                "receivedFrom": "Rathod",
+                "transactionTime": "2025:01:30 09:05:12",
+                "amount": 150
+            },
+            {
+                "receivedFrom": "Reddy",
+                "transactionTime": "2025:01:30 09:06:45",
+                "amount": 950
+            },
+            {
+                "receivedFrom": "Mutha",
+                "transactionTime": "2025:01:30 09:08:10",
+                "amount": 600
+            },
+            {
+                "receivedFrom": "Banarjee",
+                "transactionTime": "2025:01:30 09:09:33",
+                "amount": 875
+            },
+            {
+                "receivedFrom": "Kulkarni",
+                "transactionTime": "2025:01:30 09:12:22",
+                "amount": 300
+            },
+            {
+                "receivedFrom": "Joshi",
+                "transactionTime": "2025:01:30 09:14:10",
+                "amount": 450
+            },
+            {
+                "receivedFrom": "Kapadiya",
+                "transactionTime": "2025:01:30 09:15:45",
+                "amount": 1000
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "deviceId": "864068071000003",
+        "totalCollection": 12500,
+        "last10Transactions": [
+            {
+                "receivedFrom": "Sharma",
+                "transactionTime": "2025:01:30 09:00:12",
+                "amount": 500
+            },
+            {
+                "receivedFrom": "Gupta",
+                "transactionTime": "2025:01:30 09:02:34",
+                "amount": 750
+            },
+            {
+                "receivedFrom": "Iyer",
+                "transactionTime": "2025:01:30 09:03:56",
+                "amount": 200
+            },
+            {
+                "receivedFrom": "Rathod",
+                "transactionTime": "2025:01:30 09:05:12",
+                "amount": 150
+            },
+            {
+                "receivedFrom": "Reddy",
+                "transactionTime": "2025:01:30 09:06:45",
+                "amount": 950
+            },
+            {
+                "receivedFrom": "Mutha",
+                "transactionTime": "2025:01:30 09:08:10",
+                "amount": 600
+            },
+            {
+                "receivedFrom": "Banarjee",
+                "transactionTime": "2025:01:30 09:09:33",
+                "amount": 875
+            },
+            {
+                "receivedFrom": "Kulkarni",
+                "transactionTime": "2025:01:30 09:12:22",
+                "amount": 300
+            },
+            {
+                "receivedFrom": "Joshi",
+                "transactionTime": "2025:01:30 09:14:10",
+                "amount": 450
+            },
+            {
+                "receivedFrom": "Kapadiya",
+                "transactionTime": "2025:01:30 09:15:45",
+                "amount": 1000
+            }
+        ]
+    }
+]

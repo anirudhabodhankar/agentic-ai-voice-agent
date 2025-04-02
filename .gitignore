@@ -1,0 +1,9 @@
+server/__pycache__/
+bot/__pycache__/
+setup/__pycache__/
+server/.env
+server/.env2
+server/org.env
+temp/
+
+server/.env2

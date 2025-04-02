@@ -1,0 +1,35 @@
+# Use an official Python runtime as a parent image
+# docker run -d -p 5678:5678 -p 8000:8000 your_image_name
+
+FROM python:3.11-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the current directory contents into the container
+COPY . /app
+
+# Copy the .env file into the container
+#COPY .env /app/.env
+
+WORKDIR /app
+
+RUN pip install --upgrade pip
+RUN apt-get update && apt-get install -y ffmpeg
+#RUN apt-get install libasound-dev libportaudio2 libportaudiocpp0 portaudio19-dev -y
+RUN apt-get install portaudio19-dev python3-pyaudio -y
+
+# Install dependencies
+RUN pip install --no-cache-dir -r server/requirements.txt
+RUN pip install debugpy python-dotenv
+
+# Expose port 8000 for the FastAPI app
+EXPOSE 8000
+
+# Expose the debug port (5678)
+EXPOSE 5678
+
+# Run the FastAPI application
+CMD ["uvicorn", "server.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start the app with debugpy
+#CMD ["python", "-m", "debugpy", "--listen", "0.0.0.0:5678", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

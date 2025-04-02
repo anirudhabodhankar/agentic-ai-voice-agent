@@ -1,0 +1,247 @@
+[
+	{
+        "id": "5",
+        "deviceId": "864068071000005",
+        "dailyCollection": 17500,
+        "weeklyCollection": 85000,
+        "monthlyCollection": 320000,
+        "last10Transactions": [{
+                "transactionTime": "2025:01:30 09:00:12",
+                "amount": 500,
+                "announcementTime": "2025:01:30 09:00:15"
+            }, {
+                "transactionTime": "2025:01:30 09:02:34",
+                "amount": 750,
+                "announcementTime": "2025:01:30 09:02:39"
+            }, {
+                "transactionTime": "2025:01:30 09:03:56",
+                "amount": 200,
+                "announcementTime": "2025:01:30 09:03:58"
+            }, {
+                "transactionTime": "2025:01:30 09:05:12",
+                "amount": 150,
+                "announcementTime": "2025:01:30 09:05:25"
+            }, {
+                "transactionTime": "2025:01:30 09:06:45",
+                "amount": 950,
+                "announcementTime": "2025:01:30 09:06:58"
+            }, {
+                "transactionTime": "2025:01:30 09:08:10",
+                "amount": 600,
+                "announcementTime": "2025:01:30 09:08:22"
+            }, {
+                "transactionTime": "2025:01:30 09:09:33",
+                "amount": 875,
+                "announcementTime": "2025:01:30 09:09:40"
+            }, {
+                "transactionTime": "2025:01:30 09:12:22",
+                "amount": 300,
+                "announcementTime": "2025:01:30 09:12:29"
+            }, {
+                "transactionTime": "2025:01:30 09:14:10",
+                "amount": 450,
+                "announcementTime": "2025:01:30 09:14:15"
+            }, {
+                "transactionTime": "2025:01:30 09:15:45",
+                "amount": 1000,
+                "announcementTime": "2025:01:30 09:15:51"
+            }
+        ]
+    },
+    {
+        "id": "1",
+        "deviceId": "864068071000001",
+        "dailyCollection": 19300,
+        "weeklyCollection": 97000,
+        "monthlyCollection": 480000,
+        "last10Transactions": [{
+                "transactionTime": "2025:01:30 09:00:09",
+                "amount": 400,
+                "announcementTime": "2025:01:30 09:00:15"
+            }, {
+                "transactionTime": "2025:01:30 09:02:21",
+                "amount": 650,
+                "announcementTime": "2025:01:30 09:02:33"
+            }, {
+                "transactionTime": "2025:01:30 09:03:45",
+                "amount": 300,
+                "announcementTime": "2025:01:30 09:03:58"
+            }, {
+                "transactionTime": "2025:01:30 09:05:05",
+                "amount": 900,
+                "announcementTime": "2025:01:30 09:05:18"
+            }, {
+                "transactionTime": "2025:01:30 09:06:31",
+                "amount": 750,
+                "announcementTime": "2025:01:30 09:06:45"
+            }, {
+                "transactionTime": "2025:01:30 09:08:03",
+                "amount": 550,
+                "announcementTime": "2025:01:30 09:08:19"
+            }, {
+                "transactionTime": "2025:01:30 09:10:19",
+                "amount": 700,
+                "announcementTime": "2025:01:30 09:10:30"
+            }, {
+                "transactionTime": "2025:01:30 09:11:27",
+                "amount": 250,
+                "announcementTime": "2025:01:30 09:11:38"
+            }, {
+                "transactionTime": "2025:01:30 09:13:11",
+                "amount": 1000,
+                "announcementTime": "2025:01:30 09:13:22"
+            }, {
+                "transactionTime": "2025:01:30 09:14:43",
+                "amount": 950,
+                "announcementTime": "2025:01:30 09:14:59"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "deviceId": "864068071000002",
+        "dailyCollection": 16250,
+        "weeklyCollection": 78000,
+        "monthlyCollection": 295000,
+        "last10Transactions": [{
+                "transactionTime": "2025:01:30 09:01:10",
+                "amount": 650,
+                "announcementTime": "2025:01:30 09:01:20"
+            }, {
+                "transactionTime": "2025:01:30 09:02:45",
+                "amount": 300,
+                "announcementTime": "2025:01:30 09:02:58"
+            }, {
+                "transactionTime": "2025:01:30 09:03:55",
+                "amount": 150,
+                "announcementTime": "2025:01:30 09:04:05"
+            }, {
+                "transactionTime": "2025:01:30 09:05:33",
+                "amount": 500,
+                "announcementTime": "2025:01:30 09:05:44"
+            }, {
+                "transactionTime": "2025:01:30 09:07:15",
+                "amount": 800,
+                "announcementTime": "2025:01:30 09:07:24"
+            }, {
+                "transactionTime": "2025:01:30 09:08:40",
+                "amount": 950,
+                "announcementTime": "2025:01:30 09:08:50"
+            }, {
+                "transactionTime": "2025:01:30 09:10:05",
+                "amount": 750,
+                "announcementTime": "2025:01:30 09:10:15"
+            }, {
+                "transactionTime": "2025:01:30 09:11:58",
+                "amount": 400,
+                "announcementTime": "2025:01:30 09:12:06"
+            }, {
+                "transactionTime": "2025:01:30 09:13:29",
+                "amount": 600,
+                "announcementTime": "2025:01:30 09:13:41"
+            }, {
+                "transactionTime": "2025:01:30 09:14:55",
+                "amount": 750,
+                "announcementTime": "2025:01:30 09:15:07"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "deviceId": "864068071000003",
+        "dailyCollection": 18500,
+        "weeklyCollection": 92000,
+        "monthlyCollection": 350000,
+        "last10Transactions": [{
+                "transactionTime": "2025:01:30 09:00:32",
+                "amount": 700,
+                "announcementTime": "2025:01:30 09:00:43"
+            }, {
+                "transactionTime": "2025:01:30 09:01:50",
+                "amount": 300,
+                "announcementTime": "2025:01:30 09:01:58"
+            }, {
+                "transactionTime": "2025:01:30 09:02:55",
+                "amount": 950,
+                "announcementTime": "2025:01:30 09:03:07"
+            }, {
+                "transactionTime": "2025:01:30 09:04:18",
+                "amount": 400,
+                "announcementTime": "2025:01:30 09:04:25"
+            }, {
+                "transactionTime": "2025:01:30 09:06:05",
+                "amount": 850,
+                "announcementTime": "2025:01:30 09:06:15"
+            }, {
+                "transactionTime": "2025:01:30 09:07:22",
+                "amount": 500,
+                "announcementTime": "2025:01:30 09:07:32"
+            }, {
+                "transactionTime": "2025:01:30 09:08:39",
+                "amount": 600,
+                "announcementTime": "2025:01:30 09:08:52"
+            }, {
+                "transactionTime": "2025:01:30 09:09:58",
+                "amount": 800,
+                "announcementTime": "2025:01:30 09:10:09"
+            }, {
+                "transactionTime": "2025:01:30 09:11:43",
+                "amount": 250,
+                "announcementTime": "2025:01:30 09:11:55"
+            }, {
+                "transactionTime": "2025:01:30 09:12:54",
+                "amount": 1000,
+                "announcementTime": "2025:01:30 09:13:09"
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "deviceId": "864068071000004",
+        "dailyCollection": 17650,
+        "weeklyCollection": 89000,
+        "monthlyCollection": 300000,
+        "last10Transactions": [{
+                "transactionTime": "2025:01:30 09:01:15",
+                "amount": 500,
+                "announcementTime": "2025:01:30 09:01:25"
+            }, {
+                "transactionTime": "2025:01:30 09:02:44",
+                "amount": 300,
+                "announcementTime": "2025:01:30 09:02:50"
+            }, {
+                "transactionTime": "2025:01:30 09:03:33",
+                "amount": 600,
+                "announcementTime": "2025:01:30 09:03:45"
+            }, {
+                "transactionTime": "2025:01:30 09:05:27",
+                "amount": 950,
+                "announcementTime": "2025:01:30 09:05:40"
+            }, {
+                "transactionTime": "2025:01:30 09:06:57",
+                "amount": 150,
+                "announcementTime": "2025:01:30 09:07:12"
+            }, {
+                "transactionTime": "2025:01:30 09:07:50",
+                "amount": 700,
+                "announcementTime": "2025:01:30 09:08:03"
+            }, {
+                "transactionTime": "2025:01:30 09:09:03",
+                "amount": 550,
+                "announcementTime": "2025:01:30 09:09:19"
+            }, {
+                "transactionTime": "2025:01:30 09:10:21",
+                "amount": 900,
+                "announcementTime": "2025:01:30 09:10:36"
+            }, {
+                "transactionTime": "2025:01:30 09:12:15",
+                "amount": 750,
+                "announcementTime": "2025:01:30 09:12:27"
+            }, {
+                "transactionTime": "2025:01:30 09:14:22",
+                "amount": 800,
+                "announcementTime": "2025:01:30 09:14:33"
+            }
+        ]
+    }
+]

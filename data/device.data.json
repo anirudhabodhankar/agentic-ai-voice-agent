@@ -1,0 +1,163 @@
+[
+    {
+        "id": "5",
+        "deviceId": "864068071000005",
+        "customerName": "Pravin",
+        "purchaseDate": "01-01-2025",
+        "bindingStatus": "BIND",
+        "batteryStatus": 100,
+        "networkStatus": "connected",
+        "chargingStatus": true,
+        "lastConnectedDate": "2025-01-28 11:15:17",
+        "lastPulseDate": "2025-01-28 10:45:20",
+        "language": "English",
+        "plan": {
+            "planId": "11",
+            "description": "This is a static Rs 1 monthly plan",
+            "planType": "Static monthly",
+            "amount": 1
+        },
+        "model": {
+            "id": 1,
+            "modelIotName": "ABC123",
+            "marketingName": "PayNow SoundPod 3.0 4G",
+            "Device languages": "11",
+            "Battery life time": "7 day",
+            "Network": "4G",
+            "Charging": "Type C",
+            "features": "Language change; settlement announcement; payment summary announcement; custom greetings"
+        },
+        "deviceStatus": {
+            "status": "good",
+            "description": "Battery AND SD card of the device are in good condition"
+        }
+    },
+    {
+        "id": "1",
+        "deviceId": "864068071000001",
+        "customerName": "Amit",
+        "purchaseDate": "01-08-2025",
+        "bindingStatus": "UNBIND",
+        "batteryStatus": 80,
+        "networkStatus": "disconnected",
+        "chargingStatus": false,
+        "lastConnectedDate": "2025-01-29 13:15:19",
+        "lastPulseDate": "2025-01-29 13:15:19",
+        "language": "English",
+        "plan": {
+            "planId": "12",
+            "description": "This is a static Rs 99 monthly plan",
+            "planType": "Static monthly",
+            "amount": 99
+        },
+        "model": {
+            "id": 2,
+            "modelIotName": "DEF123",
+            "marketingName": "PayNow SoundPod 4.0 4G",
+            "Device languages": "11",
+            "Battery life time": "7 day",
+            "Network": "2G",
+            "Charging": "Type C",
+            "features": "Language change; settlement announcement; payment summary announcement"
+        },
+        "deviceStatus": {
+            "status": "good",
+            "description": "Battery AND SD card of the device are in good condition"
+        }
+    },
+    {
+        "id": "2",
+        "deviceId": "864068071000002",
+        "customerName": "Ravi",
+        "purchaseDate": "08-07-2024",
+        "bindingStatus": "PREBIND",
+        "batteryStatus": 15,
+        "networkStatus": "connected",
+        "chargingStatus": false,
+        "lastConnectedDate": "2025-01-28 11:15:17",
+        "lastPulseDate": null,
+        "language": "English",
+        "plan": {
+            "planId": "12",
+            "description": "This is a static Rs 99 monthly plan",
+            "planType": "Static monthly",
+            "amount": 99
+        },
+        "model": {
+            "id": 3,
+            "modelIotName": "GHI456",
+            "marketingName": "PayNow Pebble SoundPod",
+            "Device languages": "11",
+            "Battery life time": "7 day",
+            "Network": "4G",
+            "Charging": "Type C",
+            "features": "Language change; settlement announcement"
+        },
+        "deviceStatus": {
+            "status": "insufficient",
+            "description": "Battery AND SD card status both are in insufficient status, i.e., there is not enough data to predict their actual states"
+        }
+    },
+    {
+        "id": "3",
+        "deviceId": "864068071000003",
+        "customerName": "Suresh",
+        "purchaseDate": "10-16-2024",
+        "bindingStatus": "BIND",
+        "batteryStatus": 5,
+        "networkStatus": "disconnected",
+        "chargingStatus": true,
+        "lastConnectedDate": null,
+        "lastPulseDate": "2024-11-28 10:45:20",
+        "language": "Hindi",
+        "plan": {
+            "planId": "13",
+            "description": "This is a dynamic Rs 99 monthly plan which has conditional offer attached to it. Your monthly rental will be â‚¹49 for up to 100 payments, â‚¹39 for up to 200 payments, â‚¹29 for up to 300 payments, and just Rs 19 if you exceed 300 payments.",
+            "planType": "Conditional monthly",
+            "amount": 99
+        },
+        "model": {
+            "id": 4,
+            "modelIotName": "PQR789",
+            "marketingName": "PayNow SoundPod 3.0 2G",
+            "Device languages": "11",
+            "Battery life time": "7 day",
+            "Network": "2G",
+            "Charging": "Type C",
+            "features": "Language change"
+        },
+        "deviceStatus": {
+            "status": "bad",
+            "description": "Battery OR SD Card of the device is in bad condition"
+        }
+    },
+    {
+        "id": "4",
+        "deviceId": "864068071000004",
+        "customerName": "Shweta",
+        "purchaseDate": "01-29-2025",
+        "bindingStatus": "BIND",
+        "batteryStatus": 1,
+        "networkStatus": "connected",
+        "chargingStatus": true,
+        "lastConnectedDate": "2025-01-29 15:15:19",
+        "lastPulseDate": "2025-01-29 12:15:25",
+        "language": "Hindi",
+        "plan": {
+            "planId": "99",
+            "description": "This is a lifetime plan of Rs 1999. Merchant pays Rs 1999 upfront and no further deductions happen",
+            "planType": "Lifetime",
+            "amount": 2199
+        },
+        "model": {
+            "id": 5,
+            "modelIotName": "JKL123",
+            "marketingName": "PayNow SoundPod",
+            "Device languages": "11",
+            "Battery life time": "4 day",
+            "Network": "2G",
+            "Charging": "Micro USB",
+            "features": "-"
+        }
+    }
+]

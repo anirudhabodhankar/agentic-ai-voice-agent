@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "prefix": {
+      "type": "string",
+      "defaultValue": "vpa",
+      "metadata": {
+        "description": "The prefix to use for all resource names."
+      }
+    },
+    "region_openai": {
+      "type": "string",
+      "metadata": {
+        "description": "The Azure region where resources will be deployed."
+      }
+    }
+    ,
+    "region_speech": {
+      "type": "string",
+      "metadata": {
+        "description": "The Azure region where resources will be deployed."
+      }
+    }
+    ,
+    "region": {
+      "type": "string",
+      "metadata": {
+        "description": "The Azure region where resources will be deployed."
+      }
+    }
+  },
+  "variables": {},
+  "resources": []
+}
