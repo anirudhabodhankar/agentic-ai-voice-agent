@@ -2,7 +2,6 @@
 #python -m bot.agent_text 
 import asyncio  
 import threading  
-from server import agent_base  
 from bot import agent_proxy
 
 from server import utils_logger

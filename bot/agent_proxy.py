@@ -130,6 +130,7 @@ class AgentProxy :
         console_logger.info(f"Sending user for device id : {device_id}, user input: {user_input}, user audio file: {user_audio_file}")        
         play_filler_music(self.ap, 1)         
 
+        encoded_string = ""
         try:
             if(user_audio_file):  
                 audio_bytes = None
@@ -140,23 +141,23 @@ class AgentProxy :
                         audio_bytes = wav_reader.read()
                 encoded_string = base64.b64encode(audio_bytes).decode('utf-8')
 
-                if(is_single_app):
-                    query_input = main.QueryInput(device_id=device_id, user_input=user_input, user_audio_input=encoded_string)
-                    console_logger.info(f"Received User input: {query_input.user_input}")
-                    async for audio_chunk in main.get_audio_stream_base64( query_input=query_input, type=audio_input_format):
+            if(is_single_app):
+                query_input = main.QueryInput(device_id=device_id, user_input=user_input, user_audio_input=encoded_string)
+                console_logger.info(f"Received User input: {query_input.user_input}")
+                async for audio_chunk in main.get_audio_stream_base64( query_input=query_input, type=audio_input_format):
+                    self.process_audio_chunk(audio_chunk) 
+
+            else:
+                request_paylaod = {
+                    "device_id": device_id,
+                    "user_input": user_input,
+                    #"user_input": "",
+                    "user_audio_input": encoded_string
+                }   
+
+                with requests.get(url=server_url, stream=True, headers=headers, json=request_paylaod) as response:
+                    for audio_chunk in response.iter_content(chunk_size=1024):                                
                         self.process_audio_chunk(audio_chunk) 
-
-                else:
-                    request_paylaod = {
-                        "device_id": device_id,
-                        "user_input": user_input,
-                        #"user_input": "",
-                        "user_audio_input": encoded_string
-                    }   
-
-                    with requests.get(url=server_url, stream=True, headers=headers, json=request_paylaod) as response:
-                        for audio_chunk in response.iter_content(chunk_size=1024):                                
-                            self.process_audio_chunk(audio_chunk) 
 
         except FileNotFoundError:  
             console_logger.error(f"Audio input file not found: {user_audio_file}")

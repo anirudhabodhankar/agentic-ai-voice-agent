@@ -65,13 +65,17 @@ async def get_audio_stream_base64(query_input: QueryInput, type:str = "wav") -> 
         console_logger.info(f"User input format: {type} and size: {len(query_input.user_audio_input)}, request_id: {request_id}")
         
         try:
+            query_text = ""
             user_audio_input = query_input.user_audio_input
-            if type == "amr":
-                span.add_event("Converting AMR to WAV")
-                user_audio_input = convert_amr_to_wav(query_input.user_audio_input)
-                span.set_attribute("conversion_performed", True)
+            if(query_input.user_input and query_input.user_input.strip()):
+                query_text = query_input.user_input
+            elif query_input.user_audio_input and len(query_input.user_audio_input) > 0:
+                if type == "amr":
+                    span.add_event("Converting AMR to WAV")
+                    user_audio_input = convert_amr_to_wav(query_input.user_audio_input)
+                    span.set_attribute("conversion_performed", True)
 
-            query_text = convert_wav_to_text(user_audio_input) 
+                query_text = convert_wav_to_text(user_audio_input) 
 
             span.add_event("Starting streaming response")
             chunk_count = 0
