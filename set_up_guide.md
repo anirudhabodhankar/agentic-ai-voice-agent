@@ -85,7 +85,7 @@ pip install -r server/requirements.txt
 3. Ingest data
 ```bash
 python -m setup.ingest_data_db
-python -m setup.ingest_index_langchain
+python -m setup.ingest_data_index_langchain
 ``` 
 
 #### 3. Start Server

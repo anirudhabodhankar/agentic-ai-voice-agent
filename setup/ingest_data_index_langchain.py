@@ -8,54 +8,42 @@ from server import utils_logger
 console_logger, console_tracer = utils_logger.get_logger_tracer(__name__)
 
 from langchain_community.document_loaders import TextLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import AzureOpenAIEmbeddings
 from langchain_core.documents import Document
 
 azure_openai_api_version: str = "2024-05-01-preview"
 azure_deployment: str = "text-embedding-ada-002"
 
-index_store : str = "chroma"
-if index_store == "chroma":
-    from langchain_chroma import Chroma
+print (os.getenv("AZURE_AI_SEARCH_ENDPOINT", "NA"))
+print (os.getenv("AZURE_AI_SEARCH_KEY", "NA"))
+print (os.getenv("AZURE_OPENAI_API_KEY", "NA"))
+print (os.getenv("AZURE_OPENAI_ENDPOINT", "NA"))
 
-    embedding_function: AzureOpenAIEmbeddings = AzureOpenAIEmbeddings(
-        azure_deployment= azure_deployment,
-        openai_api_version= azure_openai_api_version 
+from langchain_community.vectorstores.azuresearch import AzureSearch
+embedding_function: AzureOpenAIEmbeddings = AzureOpenAIEmbeddings(
+    azure_deployment= azure_deployment,
+    openai_api_version= azure_openai_api_version 
+)
+
+vector_store_address: str = os.getenv("AZURE_AI_SEARCH_ENDPOINT", "NA")
+vector_store_password: str = os.getenv("AZURE_AI_SEARCH_KEY", "NA")
+
+doc_index : str = os.getenv("AZURE_AI_SEARCH_INDEX_DOC", "NA")
+tool_index : str = os.getenv("AZURE_AI_SEARCH_INDEX_TOOL", "NA")
+
+vector_store_doc: AzureSearch = AzureSearch(
+        azure_search_endpoint=vector_store_address,
+        azure_search_key=vector_store_password,
+        index_name=doc_index,
+        embedding_function=embedding_function,
     )
 
-    vector_store_doc = Chroma(persist_directory="../server/chroma_db_2", embedding_function=embedding_function)
-    vector_store_tool = Chroma(persist_directory="../server/chroma_db_tools_2", embedding_function=embedding_function)
-else:
-    from langchain_community.vectorstores.azuresearch import AzureSearch
-    embedding_function: AzureOpenAIEmbeddings = AzureOpenAIEmbeddings(
-        azure_deployment= azure_deployment,
-        openai_api_version= azure_openai_api_version 
+vector_store_tool: AzureSearch = AzureSearch(
+        azure_search_endpoint=vector_store_address,
+        azure_search_key=vector_store_password,
+        index_name=tool_index,
+        embedding_function=embedding_function,
     )
-
-    azure_endpoint: str = os.getenv("COSMOS_DB_ENDPOINT", "NA")
-    azure_openai_api_key: str = os.getenv("AZURE_OPENAI_API_KEY", "NA")
-
-
-    vector_store_address: str = os.getenv("AZURE_AI_SEARCH_ENDPOINT", "NA")
-    vector_store_password: str = os.getenv("AZURE_AI_SEARCH_KEY", "NA")
-
-    doc_index : str = os.getenv("AZURE_AI_SEARCH_INDEX_DOC", "NA")
-    tool_index : str = os.getenv("AZURE_AI_SEARCH_INDEX_TOOL", "NA")
-
-    vector_store_doc: AzureSearch = AzureSearch(
-            azure_search_endpoint=vector_store_address,
-            azure_search_key=vector_store_password,
-            index_name=doc_index,
-            embedding_function=embedding_function,
-        )
-
-    vector_store_tool: AzureSearch = AzureSearch(
-            azure_search_endpoint=vector_store_address,
-            azure_search_key=vector_store_password,
-            index_name=tool_index,
-            embedding_function=embedding_function,
-        )
 
 def load_documents() :
     print("Loading documents")
@@ -211,8 +199,8 @@ def load_tools():
 
     print("Tools loaded")
 
-# load_documents()
-# load_tools()
+load_documents()
+load_tools()
 
 def query_tool():
 

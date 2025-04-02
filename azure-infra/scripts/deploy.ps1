@@ -113,6 +113,7 @@ Write-Output "Container Hostname: $containerHostName"
 
 
 $envContent = @"
+
 AZURE_OPENAI_API_KEY="$($openAiKeys.key1)"
 AZURE_OPENAI_ENDPOINT="$openAiHostName"
 AZURE_OPENAI_DEPLOYMENT="gpt-4o"

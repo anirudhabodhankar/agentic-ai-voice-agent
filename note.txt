@@ -6,8 +6,8 @@ fmpeg -i test10.wav -c:a libopencore_amrnb -ar 8000 -b:a 12.2k file10.amr
 ffmpeg -i file10.amr -ar 24000 file10_converted.wav
 ---------------------------------------------------------
 
-az resource update --resource-group "vendorpa" --name "vpa-test-cosmosdb" --resource-type "Microsoft.DocumentDB/databaseAccounts" --set properties.disableLocalAuth=false
-az resource update --resource-group "vendorpa" --name "vpa-test-cosmosdb" --resource-type "Microsoft.DocumentDB/databaseAccounts" --set properties.publicNetworkAccess="Enabled"
+az resource update --resource-group "vpa-test-rg" --name "vpa-test-cosmosdb" --resource-type "Microsoft.DocumentDB/databaseAccounts" --set properties.disableLocalAuth=false
+az resource update --resource-group "vpa-test-rg" --name "vpa-test-cosmosdb" --resource-type "Microsoft.DocumentDB/databaseAccounts" --set properties.publicNetworkAccess="Enabled"
 
 curl https://vpa-test-app.happyriver-e1449d38.southindia.azurecontainerapps.io
 curl http://localhost:8000/
