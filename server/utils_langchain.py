@@ -23,7 +23,7 @@ embedding_function = AzureOpenAIEmbeddings(
     )
 
 llm_gpt_4o = AzureChatOpenAI(
-        azure_deployment = "gpt-4o",
+        azure_deployment = os.getenv("AZURE_OPENAI_DEPLOYMENT", "NA"),
         api_version = azure_openai_api_version,
         temperature=0,
         max_tokens=200,
