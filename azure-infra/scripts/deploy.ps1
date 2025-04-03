@@ -140,6 +140,7 @@ REDIS_KEY="$($redisKeys.primaryKey)"
 
 AZURE_TTS_REGION="$region_speech"
 AZURE_TTS_API_KEY="$($speechKeys.key1)"
+AUTO_DETECT_SOURCE_LANGUAGE_CONFIG="en-IN,hi-IN"
 AZURE_TTS_SYNTHESIS_VOICE_NAME="hi-IN-AartiNeural"
 
 APPLICATIONINSIGHTS_CONNECTION_STRING="$appInsightsConnectionString"

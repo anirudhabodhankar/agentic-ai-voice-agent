@@ -12,10 +12,12 @@ console_logger, console_tracer = utils_logger.get_logger_tracer()
 # Initialize Speech SDK configuration  
 speech_config = speechsdk.SpeechConfig(  
     subscription=os.getenv("AZURE_TTS_API_KEY", ""),  
-    region=os.getenv("AZURE_TTS_REGION", "")  
+    region=os.getenv("AZURE_TTS_REGION", "")
 ) 
 
-auto_detect_source_language_config = speechsdk.languageconfig.AutoDetectSourceLanguageConfig(languages=["en-IN", "hi-IN"])
+language_config_list = region=os.getenv("AUTO_DETECT_SOURCE_LANGUAGE_CONFIG", "en-IN").split(",")
+console_logger.info(f"Language config list: {language_config_list}")
+auto_detect_source_language_config = speechsdk.languageconfig.AutoDetectSourceLanguageConfig(languages=language_config_list)
 
 def base64_to_audio_file(base64_string: str, file_extension: str = ".wav") -> str:  
     """  
@@ -116,7 +118,7 @@ class StreamingSTT:
         # instantiate the speech recognizer with push stream input
         self.speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, 
                                                             audio_config=audio_config,
-                                                             auto_detect_source_language_config=speechsdk.languageconfig.AutoDetectSourceLanguageConfig(languages=["en-IN"]))  
+                                                             auto_detect_source_language_config=speechsdk.languageconfig.AutoDetectSourceLanguageConfig(languages=language_config_list))  
 
          # start push stream writer thread
         self.push_stream_writer_thread = threading.Thread(target=self.push_stream_writer)

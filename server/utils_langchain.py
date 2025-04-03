@@ -266,7 +266,6 @@ tool_map = {
 @console_tracer.start_as_current_span("get_agent_executor")
 def get_agent_executor(query: str):
     filtered_tools = vector_store_tool.similarity_search(query = query, k = 3)
-    print(f"filtered_tools: {filtered_tools}")
     
     tools = []
     for filtered_tool in filtered_tools:
