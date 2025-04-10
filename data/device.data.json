@@ -13,9 +13,9 @@
         "language": "English",
         "plan": {
             "planId": "11",
-            "description": "This is a static Rs 1 monthly plan",
+            "description": "This is a static Rs 1000 monthly plan",
             "planType": "Static monthly",
-            "amount": 1
+            "amount": 1000
         },
         "model": {
             "id": 1,
@@ -46,9 +46,9 @@
         "language": "English",
         "plan": {
             "planId": "12",
-            "description": "This is a static Rs 99 monthly plan",
+            "description": "This is a static Rs 999 monthly plan",
             "planType": "Static monthly",
-            "amount": 99
+            "amount": 999
         },
         "model": {
             "id": 2,
@@ -79,9 +79,9 @@
         "language": "English",
         "plan": {
             "planId": "12",
-            "description": "This is a static Rs 99 monthly plan",
+            "description": "This is a static Rs 999 monthly plan",
             "planType": "Static monthly",
-            "amount": 99
+            "amount": 999
         },
         "model": {
             "id": 3,
@@ -112,9 +112,9 @@
         "language": "Hindi",
         "plan": {
             "planId": "13",
-            "description": "This is a dynamic Rs 99 monthly plan which has conditional offer attached to it. Your monthly rental will be â‚¹49 for up to 100 payments, â‚¹39 for up to 200 payments, â‚¹29 for up to 300 payments, and just Rs 19 if you exceed 300 payments.",
+            "description": "This is a dynamic Rs 599 monthly plan which has conditional offer attached to it. Your monthly rental will be â‚¹49 for up to 100 payments, â‚¹39 for up to 200 payments, â‚¹29 for up to 300 payments, and just Rs 19 if you exceed 300 payments.",
             "planType": "Conditional monthly",
-            "amount": 99
+            "amount": 599
         },
         "model": {
             "id": 4,

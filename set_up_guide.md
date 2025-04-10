@@ -126,7 +126,7 @@ Current scenario is built for a device (SoundPod). These devices are POS machine
       - Device rental plans 
    - Sample queries
       - What is name of my device
-      - What are features of echobox
+      - What are features of SoundPod
       - What is my rental plan
 
 2. **Transaction Agent**
